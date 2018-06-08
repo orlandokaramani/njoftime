@@ -1,0 +1,146 @@
+<ion-header style="background: #df3023" no-border>
+  <ion-navbar>
+ <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="light">Skip</button>
+    </ion-buttons> 
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+      <!-- SLide 1 Login -->
+    <ion-slide style="background: #df3023">
+      <img src="assets/img/logo-km.png" alt="">
+      <h1 style="font-weight: bold; color: white; font-family: Montserrat-Bold; font-size: 3.4rem">Njoftim Publik</h1>
+      <h5 style="color: white; font-family: Montserrat-Regular; font-size: 1.2rem;">Njoftime nga Administrata Publike</h5>
+      <ion-row>
+          <ion-col text-center style="margin-left: 10%; margin-right: 10%;">
+              <div style=" background: white; border-radius: 10px;">	
+                <form #loginForm="ngForm" novalidate>
+                  <ion-row style="height: 20px"></ion-row>
+                  <img src="assets/img/bell.png" alt="">
+                    <ion-item>
+                      <ion-label style="text-align: center; color: #161615" stacked color="primary">Email</ion-label>
+                      <ion-input [(ngModel)]="login.email" placeholder="Ju lutemi vendosni emailin tuaj" style="font-family:Montserrat-Regular;" name="email" type="text" 
+                      #email="ngModel" spellcheck="false" autocapitalize="off"
+                        required>
+                      </ion-input>
+                    </ion-item>
+                    <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+                      Username is required
+                    </p>
+              
+                   
+              
+                  <ion-row responsive-sm>
+                    <ion-col style="margin-left: 10%;">
+                      <button ion-button (click)="onLogin(loginForm)" type="submit" 
+                      style="color: #424241; background:white; border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
+                      block>Logohu</button>
+                    </ion-col>
+                    <ion-col style="margin-left: 10%;">
+                        <button ion-button (click)="onLogin(loginForm)" type="submit" 
+                        style="color: white; background:#004a80; font-family: Montserrat-Regular; font-size: 15px; 
+                        border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
+                        block><ion-icon name="logo-facebook"></ion-icon> Logohu me Facebook</button>
+                      </ion-col>
+                  
+                  </ion-row>
+                </form>
+              </div>
+          </ion-col>
+        </ion-row>
+      
+    </ion-slide>
+
+    <ion-slide style="background: #df3023">
+       
+        <h1 style="font-weight: bold; color: white; font-family: Montserrat-Bold; font-size: 3.4rem">Regjistrohu</h1>
+        <h5 style="color: white; font-family: Montserrat-Regular; font-size: 1.2rem;">Merni njoftime sipas interesit tuaj</h5>
+        <ion-row>
+            <ion-col text-center style="margin-left: 10%; margin-right: 10%;">
+                <div style=" background: white; border-radius: 10px;">	
+                  <form #registerForm="ngForm" novalidate>
+                    <ion-row style="height: 20px"></ion-row>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label style="text-align: center; color: #161615" stacked color="primary">Emer</ion-label>
+                                <ion-input [(ngModel)]="register.emer"  name="emer" type="text" 
+                                #emer="ngModel" spellcheck="false" autocapitalize="off"
+                                  required>
+                                </ion-input>
+                              </ion-item>
+                              <p ion-text [hidden]="emer.valid || submitted == false" color="danger" padding-left>
+                                Username is required
+                              </p>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label style="text-align: center; color: #161615" stacked color="primary">Mbiemer</ion-label>
+                                <ion-input [(ngModel)]="register.mbiemer"  name="mbiemer" type="text" 
+                                #mbiemer="ngModel" spellcheck="false" autocapitalize="off"
+                                  required>
+                                </ion-input>
+                              </ion-item>
+                              <p ion-text [hidden]="mbiemer.valid || submitted == false" color="danger" padding-left>
+                                Username is required
+                              </p>
+                        </ion-col>
+                        
+                      </ion-row>
+                     
+                      <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label style="text-align: center; color: #161615" stacked color="primary">Email</ion-label>
+                                <ion-input [(ngModel)]="login.email" placeholder="Ju lutemi vendosni emailin tuaj" name="email" type="text" 
+                                #email="ngModel" spellcheck="false" autocapitalize="off"
+                                  required>
+                                </ion-input>
+                              </ion-item>
+                              <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+                                Username is required
+                              </p>
+                        </ion-col>
+                        <ion-item style="font-family:MontSerrat-Regular; font-size: 1.2rem;">
+                            <ion-label>Gjinia</ion-label>
+                            <ion-select [(ngModel)]="gjinia" name="gjinia">
+                              <ion-option value="f">Mashkull</ion-option>
+                              <ion-option value="m">Femer</ion-option>
+                            </ion-select>
+                          </ion-item>
+                      </ion-row>
+                    </ion-grid>
+                   
+                     
+                      
+                     
+                
+                    <ion-row responsive-sm>
+                      <ion-col style="margin-left: 10%">
+                        <button ion-button (click)="onLogin(registerForm)" type="submit" 
+                        style="color: #424241; font-family: Montserrat-Regular; background:white; border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
+                        block>Regjistrohu</button>
+                      </ion-col>
+                      <ion-col style="margin-left: 10%;">
+                          <button ion-button (click)="onLogin(loginForm)" type="submit" 
+                          style="color: white; background:#004a80; font-family: Montserrat-Regular; font-size: 15px; 
+                          border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
+                          block><ion-icon name="logo-facebook"></ion-icon> Regjistrohu me Facebook</button>
+                        </ion-col>
+                     
+                    
+                    </ion-row>
+                  </form>
+                </div>
+            </ion-col>
+          </ion-row>
+        
+      </ion-slide>
+
+   
+
+  </ion-slides>
+</ion-content>

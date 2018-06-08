@@ -1,0 +1,13 @@
+
+  <ion-card-content> 
+      <ion-slides > 
+        <ion-slide *ngFor="let a of energjia"> 
+          <div class="slide-image">
+            <img  src="{{a.url}}">
+          </div>
+          <div class="slider-details">
+            <h4 >{{a.teksti}}</h4>
+          </div> 
+        </ion-slide> 
+      </ion-slides> 
+    </ion-card-content>

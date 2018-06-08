@@ -1,0 +1,54 @@
+
+page-tutorial {
+  .toolbar-background {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 2.8rem;
+  }
+
+  .slide-image {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 36px 0;
+  }
+  /* .col{
+    margin-left: 10%;
+    margin-right: 10%;
+     
+  } */
+  .item-ios.item-label-stacked 
+  .text-input, 
+  .item-ios.item-label-floating 
+  .text-input{font-size: 12px; text-align: center;}
+ .button.ion-icon{
+padding-right: 5px;
+  }
+.button{
+  max-width: 220px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+  background: white;
+}
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
+  }
+
+}
