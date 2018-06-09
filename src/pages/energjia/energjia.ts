@@ -18,6 +18,7 @@ export class EnergjiaPage {
   energjia = Postime;
 
   constructor(  
+    public navCtrl: NavController,
     public app: App,
     public modalCtrl: ModalController,
     public params: NavParams
@@ -28,5 +29,11 @@ export class EnergjiaPage {
     this.name = params.data.title;
     this.rootNavCtrl = params.get('rootNavCtrl');
   this.energjia = Postime;
+}
+goToPostDetail(post: any) {
+  // go to the session detail page
+  // and pass in the session data
+
+  this.navCtrl.push(EnergjiaPage, post);
 }
 }

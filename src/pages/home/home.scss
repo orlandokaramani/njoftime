@@ -1,10 +1,26 @@
 page-home{
     .toolbar-md-dark .toolbar-background-md {
-        background-color: #1d3557 !important;
+        background-color: #fff !important;
+    }
+    
+     super-tab-button.title-only .title {
+      background: red;
+      border-radius: 40px 40px 40px 40px;
+      font-family: Montserrat-Bold;
+      font-size: 10px;
+      padding: 4px;
+      margin-top: 11px;
+      line-height: 13px !important;
+    }
+   
+    super-tab-button:not(.selected) span:not(.badge){
+      background: white !important;
+      color: black;
     }
     ion-header {
         .button-md {
           box-shadow: none;
+          color: red
         }
         .toolbar-ios-lineare .bar-button-default-ios,
         .toolbar-md-lineare .bar-button-default-md{

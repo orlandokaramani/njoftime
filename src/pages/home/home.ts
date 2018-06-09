@@ -15,8 +15,12 @@ export class HomePage {
 
   @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-  page1: any = 'SignupPage';
+  page1: any = 'EnergjiaPage';
   page2: any = 'EnergjiaPage';
+  page3: any = 'EnergjiaPage';
+  page4: any = 'EnergjiaPage';
+  page5: any = 'EnergjiaPage';
+  page6: any = 'EnergjiaPage';
  
   showIcons: boolean = true;
   showTitles: boolean = true;

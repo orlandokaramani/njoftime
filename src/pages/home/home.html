@@ -5,7 +5,7 @@
         <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
       </button>
     </ion-buttons>
-        <ion-title><img alt="logo" height="40" src="assets/icon/news.png" align-title="center"> </ion-title>
+        <ion-title><h4 style="font-family: Montserrat-Bold; color: #29292b">Njoftim Publik</h4> </ion-title>
 </ion-navbar>
 
 </ion-header>
@@ -13,5 +13,9 @@
   <super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="light" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
     <super-tab [swipeBackEnabled]="true" [root]="page1" [title]="showTitles? 'Te reja' : ''" id="page1"></super-tab>
     <super-tab [root]="page2" [title]="showTitles? 'Politikë' : ''"  id="page2"></super-tab>
+    <super-tab [root]="page3" [title]="showTitles? 'Politikë' : ''"  id="page3"></super-tab>
+    <super-tab [root]="page4" [title]="showTitles? 'Politikë' : ''"  id="page4"></super-tab>
+    <super-tab [root]="page5" [title]="showTitles? 'Politikë' : ''"  id="page5"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Politikë' : ''"  id="page6"></super-tab>
   </super-tabs>
 </ion-content>

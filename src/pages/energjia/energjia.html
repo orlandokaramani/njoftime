@@ -2,7 +2,7 @@
   <ion-card-content> 
       <ion-slides > 
         <ion-slide *ngFor="let a of energjia"> 
-          <div class="slide-image">
+          <div class="slide-image-post">
             <img  src="{{a.url}}">
           </div>
           <div class="slider-details">
@@ -11,3 +11,24 @@
         </ion-slide> 
       </ion-slides> 
     </ion-card-content>
+    <div class="posts">
+    <ion-card-content>
+        <ion-grid>
+          <ion-row *ngFor="let a of energjia">
+            <ion-col style="padding-top: 15px" col-5>
+              <ion-thumbnail>
+                <img src="{{a.url}}" alt="">
+              </ion-thumbnail>
+              <h3 style="margin: 10px 0; font-size: 10px;"><ion-icon name="md-time"></ion-icon>1 ore me pare</h3>
+            </ion-col>
+            <ion-col col-7>
+              <div class="details">
+                <p style="color: white; font-size: 8px; text-align: center;  width: 30%; font-family: Montserrat-Bold; background: red; border-radius: 40px 40px 40px 40px;">{{a.ministria}}</p>
+                <h5  style="margin: 5px 0; font-family: Montserrat-Regular; font-size: 12px;">{{a.teksti}}</h5>
+              
+              
+                </div></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </div>

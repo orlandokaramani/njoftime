@@ -8,6 +8,7 @@ import { EnergjiaPage } from './energjia';
 ],
 
   imports: [
+  
     IonicPageModule.forChild(EnergjiaPage),
   ]
 })
