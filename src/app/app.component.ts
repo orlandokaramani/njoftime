@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { HomePage } from '../pages/home/home';
 
 
 @Component({
@@ -43,42 +44,22 @@ export class ConferenceApp {
     public storage: Storage,
     public splashScreen: SplashScreen
   ) {
-    this.rootPage = this.menuItems[0].page;
+    
     this.rootParams = this.menuItems[0].params;
     // Check if the user has already seen the tutorial
-    this.storage.get('hasSeenTutorial')
-      .then((hasSeenTutorial) => {
-        if (hasSeenTutorial) {
+    this.storage.get('token')
+      .then((token) => {
+        if (token) {
           this.rootPage = TutorialPage;
         } else {
-          this.rootPage = TutorialPage;
+          this.rootPage = HomePage;
         }
         this.platformReady()
       });
-
-    // load the conference data
-    confData.load();
-
-    // decide which menu items should be hidden by current login status stored in local storage
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      this.enableMenu(hasLoggedIn === true);
-    });
-    this.enableMenu(true);
-
   }
 
   openPage(page) {
     this.nav.setRoot(page.page, page.params);
-  }
-
-
-
- 
-
-
-  enableMenu(loggedIn: boolean) {
-    this.menu.enable(loggedIn, 'loggedInMenu');
-    this.menu.enable(!loggedIn, 'loggedOutMenu');
   }
 
   platformReady() {

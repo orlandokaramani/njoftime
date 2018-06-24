@@ -14,7 +14,7 @@
     <div class="posts">
     <ion-card-content>
         <ion-grid>
-          <ion-row *ngFor="let a of energjia">
+          <ion-row *ngFor="let a of energjia" tappable (click)="goToPostDetail(post)">
             <ion-col style="padding-top: 15px" col-5>
               <ion-thumbnail>
                 <img src="{{a.url}}" alt="">
@@ -24,7 +24,7 @@
             <ion-col col-7>
               <div class="details">
                 <p style="color: white; font-size: 8px; text-align: center;  width: 30%; font-family: Montserrat-Bold; background: red; border-radius: 40px 40px 40px 40px;">{{a.ministria}}</p>
-                <h5  style="margin: 5px 0; font-family: Montserrat-Regular; font-size: 12px;">{{a.teksti}}</h5>
+                <h5  style="margin: 5px 0; font-family: Montserrat-Regular; font-size: 12px;">{{a.teksti  | truncate : 100}}</h5>
               
               
                 </div></ion-col>

@@ -11,11 +11,16 @@
 </ion-header>
 <ion-content no-bounce>
   <super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="light" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
-    <super-tab [swipeBackEnabled]="true" [root]="page1" [title]="showTitles? 'Te reja' : ''" id="page1"></super-tab>
-    <super-tab [root]="page2" [title]="showTitles? 'Politikë' : ''"  id="page2"></super-tab>
-    <super-tab [root]="page3" [title]="showTitles? 'Politikë' : ''"  id="page3"></super-tab>
-    <super-tab [root]="page4" [title]="showTitles? 'Politikë' : ''"  id="page4"></super-tab>
-    <super-tab [root]="page5" [title]="showTitles? 'Politikë' : ''"  id="page5"></super-tab>
-    <super-tab [root]="page6" [title]="showTitles? 'Politikë' : ''"  id="page6"></super-tab>
+    <super-tab [swipeBackEnabled]="true" [root]="page1" [title]="showTitles? 'Energjia' : ''" id="page1"></super-tab>
+    <super-tab [root]="page2" [title]="showTitles? 'Rendi' : ''"  id="page2"></super-tab>
+    <super-tab [root]="page3" [title]="showTitles? 'Arsimi' : ''"  id="page3"></super-tab>
+    <super-tab [root]="page4" [title]="showTitles? 'Turizmi' : ''"  id="page4"></super-tab>
+    <super-tab [root]="page5" [title]="showTitles? 'Ekonomia' : ''"  id="page5"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Drejtësia' : ''"  id="page6"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Bujqësia' : ''"  id="page7"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Kultura' : ''"  id="page8"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Shëndetësia' : ''"  id="page9"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Mbrojtja' : ''"  id="page10"></super-tab>
+    <super-tab [root]="page6" [title]="showTitles? 'Punët e Jashtme' : ''"  id="page11"></super-tab>
   </super-tabs>
 </ion-content>

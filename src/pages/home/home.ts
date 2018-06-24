@@ -16,11 +16,18 @@ export class HomePage {
   @ViewChild(SuperTabs) superTabs: SuperTabs;
 
   page1: any = 'EnergjiaPage';
-  page2: any = 'EnergjiaPage';
-  page3: any = 'EnergjiaPage';
-  page4: any = 'EnergjiaPage';
-  page5: any = 'EnergjiaPage';
-  page6: any = 'EnergjiaPage';
+  page2: any = 'RendiPage';
+  page3: any = 'ArsimiPage';
+  page4: any = 'TurizmiPage';
+  page5: any = 'EkonomiaPage';
+  page6: any = 'DrejtesiaPage';
+  page7: any = 'BujqesiaPage';
+  page8: any = 'KulturaPage';
+  page9: any = 'ShendetesiaPage';
+  page10: any = 'MbrojtjaPage';
+  page11: any = 'PuneteJashtmePage';
+  
+
  
   showIcons: boolean = true;
   showTitles: boolean = true;

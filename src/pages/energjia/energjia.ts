@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavParams, NavController, App, ModalController, IonicPage } from 'ionic-angular';
 import {Postime} from '../../assets/energjia'
 
+import { PostPage } from '../post/post';
+
 @IonicPage()
 @Component({
   selector: 'page-energjia',
@@ -28,12 +30,12 @@ export class EnergjiaPage {
     this.id = params.data.id;
     this.name = params.data.title;
     this.rootNavCtrl = params.get('rootNavCtrl');
-  this.energjia = Postime;
+    this.energjia = Postime;
 }
 goToPostDetail(post: any) {
   // go to the session detail page
   // and pass in the session data
 
-  this.navCtrl.push(EnergjiaPage, post);
+  this.navCtrl.push(PostPage, post);
 }
 }

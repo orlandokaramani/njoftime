@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -10,8 +10,11 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { SuperTabsModule } from 'ionic2-super-tabs';
-
-
+import { PostPage } from '../pages/post/post';
+import { AuthHttp } from 'angular2-jwt';
+import { getAuthHttp } from '../providers/auth';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { HomePage } from '../pages/home/home';
 
 
 
@@ -19,7 +22,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   declarations: [
     ConferenceApp,
     TutorialPage,
-
+    PostPage,
+  HomePage
   ],
   imports: [
     BrowserModule,
@@ -32,15 +36,22 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   entryComponents: [
     ConferenceApp,
     TutorialPage,
-   
+    PostPage,
+    HomePage
 
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    },
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    AuthServiceProvider
   ]
 })
 export class AppModule { }

@@ -7,12 +7,13 @@ import { Storage } from '@ionic/storage';
 
 import { UserOptions } from '../../interfaces/user-options';
 import { RegisterForm } from '../../interfaces/register-form';
-import { NgForm } from '@angular/forms';
+
 import { UserData } from '../../providers/user-data';
-import { SignupPage } from '../signup/signup';
+
 
 
 import { HomePage } from '../home/home';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-tutorial',
@@ -20,8 +21,9 @@ import { HomePage } from '../home/home';
 })
 
 export class TutorialPage {
+  
   showSkip = true;
-  login: UserOptions = { email: '' };
+  model: UserOptions = { email: '' };
   register: RegisterForm = { emer: '', mbiemer: '', email: '', gjinia: '' }
   submitted = false;
   gjinia: string = "f";
@@ -31,7 +33,8 @@ export class TutorialPage {
     public navCtrl: NavController,
     public menu: MenuController,
     public storage: Storage,
-    public userData: UserData
+    public userData: UserData,
+    public authService: AuthServiceProvider
   ) { }
 
    startApp() {
@@ -39,6 +42,16 @@ export class TutorialPage {
       this.storage.set('hasSeenTutorial', 'true');
     })
   } 
+  
+  login() {
+    this.authService.login(this.model).subscribe(()=>{
+      this.navCtrl.push(HomePage).then(() => {
+        this.storage.set('hasSeenTutorial', 'true');
+      });
+    }, error => {
+      console.log(error)
+    });
+  }
 
   onSlideChangeStart(slider: Slides) {
     this.showSkip = !slider.isEnd();
@@ -47,17 +60,10 @@ export class TutorialPage {
   ionViewWillEnter() {
     this.slides.update();
   }
-  onLogin(form: NgForm) {
-    this.submitted = true;
-
-    if (form.valid) {
-      this.userData.login(this.login.email);
-      this.navCtrl.push(HomePage);
-    }
-  }
+  
 
   onSignup() {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push(TutorialPage);
   }
 
   ionViewDidEnter() {

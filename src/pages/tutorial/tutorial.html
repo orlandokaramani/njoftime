@@ -16,12 +16,12 @@
       <ion-row>
           <ion-col text-center style="margin-left: 10%; margin-right: 10%;">
               <div style=" background: white; border-radius: 10px;">	
-                <form #loginForm="ngForm" novalidate>
+                <form #loginForm="ngForm" novalidate (ngSubmit)="login()">
                   <ion-row style="height: 20px"></ion-row>
                   <img src="assets/img/bell.png" alt="">
                     <ion-item>
                       <ion-label style="text-align: center; color: #161615" stacked color="primary">Email</ion-label>
-                      <ion-input [(ngModel)]="login.email" placeholder="Ju lutemi vendosni emailin tuaj" style="font-family:Montserrat-Regular;" name="email" type="text" 
+                      <ion-input [(ngModel)]="model.email" placeholder="Ju lutemi vendosni emailin tuaj" style="font-family:Montserrat-Regular;" name="email" type="text" 
                       #email="ngModel" spellcheck="false" autocapitalize="off"
                         required>
                       </ion-input>
@@ -34,12 +34,12 @@
               
                   <ion-row responsive-sm>
                     <ion-col style="margin-left: 10%;">
-                      <button ion-button (click)="onLogin(loginForm)" type="submit" 
+                      <button ion-button  type="submit" 
                       style="color: #424241; background:white; border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
                       block>Logohu</button>
                     </ion-col>
                     <ion-col style="margin-left: 10%;">
-                        <button ion-button (click)="onLogin(loginForm)" type="submit" 
+                        <button ion-button type="submit" 
                         style="color: white; background:#004a80; font-family: Montserrat-Regular; font-size: 15px; 
                         border-radius: 40px 40px 40px 40px; box-shadow: 0 0 0 2px  rgba(0, 0, 0, 0.1);" 
                         block><ion-icon name="logo-facebook"></ion-icon> Logohu me Facebook</button>
